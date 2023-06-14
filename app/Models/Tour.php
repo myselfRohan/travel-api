@@ -18,13 +18,13 @@ class Tour extends Model
         'price'
     ];
 
-    public function setPriceAttribute()
+    public function setPriceAttribute($value)
     {
-        return $this->price * 100;
+        $this->attributes['price'] = $value * 100;
     }
 
-    public function getPriceAttribute()
+    public function getPriceAttribute($value)
     {
-        return $this->price / 100;
+        return $value / 100;
     }
 }
