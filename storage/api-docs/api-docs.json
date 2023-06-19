@@ -1,0 +1,54 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Travel Agency Api",
+        "description": "Travel Agency Api",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000/api/v1",
+            "description": "Travel Agency Api"
+        }
+    ],
+    "paths": {
+        "/travels/{travel}/tours": {
+            "get": {
+                "tags": [
+                    "tour"
+                ],
+                "summary": "get tours by travel",
+                "description": "get tours by travel",
+                "operationId": "getToursByTravel",
+                "parameters": [
+                    {
+                        "name": "travel",
+                        "in": "path",
+                        "description": "travel slug",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/travels": {
+            "get": {
+                "tags": [
+                    "travel"
+                ],
+                "summary": "get all travels",
+                "description": "get all travels",
+                "operationId": "getAllTravels",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        }
+    }
+}
