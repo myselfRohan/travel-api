@@ -2,7 +2,7 @@
 
 Travel Agency API developed using [Laravel](https://laravel.com).
 
-####Development Setup Guide
+##Development Setup Guide
 
 - Clone the project
 
