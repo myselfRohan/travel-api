@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\V1\TourController;
+use App\Http\Controllers\Api\V1\Admin\TourController;
 use App\Http\Controllers\Api\V1\Auth\LoginController;
 use App\Http\Controllers\Api\V1\Admin\TravelController;
 
@@ -28,6 +28,7 @@ Route::prefix('admin')->middleware('auth:sanctum')->group(function () {
 
     Route::middleware(['role:admin'])->group(function () {
         Route::post('travels',[TravelController::class,'store']);
+        Route::post('travels/{travel}/tours',[TourController::class,'store']);
     });
 
     Route::put('travels/{travel}',[TravelController::class,'update']);
